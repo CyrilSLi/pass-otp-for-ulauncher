@@ -55,8 +55,6 @@ class KeywordQueryEventListener(EventListener):
                         ),
                     )
                 )
-            if len(items) >= int(extension.preferences["max_display_lines"]):
-                break
 
         return RenderResultListAction(items)
 
@@ -76,13 +74,7 @@ class ItemEnterEventListener(EventListener):
                     extension.preferences["show_notification"] == "yes"
                     and process.returncode == 0
                 ):
-                    Notify.Notification.new(
-                        f"Copied {pass_arg} to clipboard.",
-                        "Will clear in 45 seconds.",
-                        "dialog-information",
-                    ).show()
-        elif keyword == extension.preferences["keyword-otp-qr"]:
-            subprocess.call(["pass", "show", "-q", pass_arg])
+                    Notify.Notification.new(f"Copied {pass_arg} to clipboard.").show()
         else:
             raise RuntimeError(f"An invalid keyword, '{keyword}', was passed")
 

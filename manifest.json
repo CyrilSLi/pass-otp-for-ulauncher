@@ -16,25 +16,11 @@
       "default_value": "otp"
     },
     {
-      "id": "keyword-otp-qr",
-      "type": "keyword",
-      "name": "otpq",
-      "description": "Generate a QR code for this OTP token.",
-      "default_value": "otpq"
-    },
-    {
       "id": "show_regex",
       "type": "input",
       "name": "Exclude files",
       "description": "Only show password files matching this regular expression",
       "default_value": ".*"
-    },
-    {
-      "id": "max_display_lines",
-      "type": "input",
-      "name": "Maximum lines to dispaly",
-      "description": "The maximum number of lines to display at once",
-      "default_value": "8"
     },
     {
       "id": "show_notification",
